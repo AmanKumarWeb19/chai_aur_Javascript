@@ -1,3 +1,5 @@
+// ****************************************Conversion***********************************************************
+
 let score = true;
 
 console.log(typeof score);
@@ -16,3 +18,5 @@ let res = 0 / 0;
 console.log(res);
 
 console.log(Number.isNaN(res)); // checking the value is NaN;
+
+// ***************************************Operation************************************************************
