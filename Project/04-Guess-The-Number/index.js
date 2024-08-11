@@ -43,10 +43,17 @@ function validateGuess(guess) {
     }
   }
 }
-validateGuess();
 
 function checkGuess(guess) {
   //
+  if (guess === randomNumber) {
+    displayMessage(`Your guess is right`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMessage(`Number is too Low`);
+  } else if (guess > randomNumber) {
+    displayMessage(`Number is Too high`);
+  }
 }
 checkGuess();
 
