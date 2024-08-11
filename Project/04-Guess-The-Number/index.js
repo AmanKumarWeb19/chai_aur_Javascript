@@ -33,6 +33,14 @@ function validateGuess(guess) {
     alert("Please Enter a number less than 100");
   } else {
     prevGuess.push(guess);
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMessage(`Game Over.Random Number was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
   }
 }
 validateGuess();
