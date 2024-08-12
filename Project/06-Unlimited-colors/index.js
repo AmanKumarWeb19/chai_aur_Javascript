@@ -11,11 +11,24 @@ const randomColor = function () {
 
 //...........................................start reference ...............................................
 
-const startChangingColor = function () {};
-const stopChangingColor = function () {};
+let intervalId;
+function changeBgColor() {
+  document.body.style.backgroundColor = randomColor();
+}
+
+const startChangingColor = function () {
+  if (!intervalId) {
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+};
+
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  intervalId = null;
+};
 
 let start = document.getElementById("start");
 start.addEventListener("click", startChangingColor);
 
-let stop = document.getElementById("stop");
-start.addEventListener("click", stopChangingColor);
+let stops = document.getElementById("stop");
+stops.addEventListener("click", stopChangingColor);
