@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Code</title>
+</head>
+
+<body style="background-color: black; color: aliceblue;">
+    <h1>Async And Await {JavaScript}</h1>
+    <button id="start" style="background-color: rgb(45, 177, 16); color: white; margin: 10px; padding: 15px;">
+        Start</button>
+    <button id="stop" style="background-color: rgb(233, 60, 12); color: white; margin: 10px; padding: 15px;">
+        Stop</button>
+</body>
+<script>
+    // const changeText = function () {
+    //     let h1 = document.querySelector("h1")
+    //     h1.innerHTML = "Best JavaScript Series!!"
+    // }
+    // const changeMe = setTimeout(changeText, 2000)
+
+
+    // let btn = document.querySelector("#stop")
+    // btn.addEventListener("click", function () {
+    //     clearTimeout(changeMe)
+    //     console.log("STOPPED");
+    // })
+
+    const sayDate = function (str) {
+        console.log(str, Date.now())
+    }
+
+    let intervalId;
+
+    const start = document.getElementById("start")
+    start.addEventListener("click", function (e) {
+        intervalId = setInterval(sayDate, 1000, "hi")
+        console.log('Start button clicked. Interval ID:', intervalId);
+    })
+
+    const stop = document.getElementById("stop")
+    stop.addEventListener("click", function () {
+        clearInterval(intervalId)
+        console.log('Stop button clicked. Interval cleared. Interval ID was:', intervalId);
+    })
+
+
+
+
+</script>
+
+</html>
