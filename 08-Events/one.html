@@ -51,6 +51,14 @@
         console.log("Clicked OWl");
     }, false)
 
+    let google = document.getElementById("google")
+    google.addEventListener("click", function (e) {
+        e.preventDefault()
+        e.stopPropagation()
+        console.log("Google Clicked");
+
+    })
+
     /*
     Event Bubbling:-
     Event Bubbling is when an Event happen on an Element. 
@@ -72,6 +80,22 @@
     Note:-
     above the example we click on owl so images will alert (clicked inside the UL) first 
     then capture the innermost target element and then alert (Clicked owl)
+
+    ...........................................................................................................
+
+    event.stopPropagation():-
+
+    This means that only current element will handle the event and it won't passed to other Element.
+
+
+    ............................................................................................................
+
+    event.preventDefault:-
+
+    This means event.preventDefault() stops the default action of an Event.
+    For Example:-
+    It can prevent form from submitting or link opening from new tab.
+
     */
 </script>
 
