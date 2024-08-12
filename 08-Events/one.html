@@ -42,22 +42,37 @@
 
     let images = document.getElementById("images")
     images.addEventListener("click", function (e) {
-        console.log("clicked inside the UL");
+        // console.log("clicked inside the UL"); 
     }, false)
 
 
     let owl = document.getElementById("owl")
     owl.addEventListener("click", function (e) {
-        console.log("Clicked OWl");
+        // console.log("Clicked OWl");
     }, false)
 
     let google = document.getElementById("google")
     google.addEventListener("click", function (e) {
         e.preventDefault()
         e.stopPropagation()
-        console.log("Google Clicked");
+        // console.log("Google Clicked");
 
     })
+
+
+    // question :- jitni bhi images hai jab mai kisi v image ko click kru to wo image gayb hojae.
+
+    let removeImage = document.querySelector("#images")
+    removeImage.addEventListener("click", function (e) {
+        console.log(e.target.tagName);
+        if (e.target.tagName === "IMG") {
+            console.log(e.target.id);
+
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+    }, false)
+
 
     /*
     Event Bubbling:-
