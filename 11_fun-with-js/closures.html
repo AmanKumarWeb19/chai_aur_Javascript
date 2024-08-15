@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closures</title>
+</head>
+
+<body style="background-color: black; color: darkcyan;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+</body>
+<script>
+    // function init() {
+    //     let name = "Mozila"
+    //     function displayName() {
+    //         let secret = "1234"
+    //         console.log(name)
+    //         console.log("In displayName fn:-", secret);
+
+    //     }
+    //     function secInnerFn() {
+    //         console.log("In secInnerFn fn:-", secret);
+    //     }
+    //     displayName()
+    //     secInnerFn()
+    // }
+    // init()
+
+    //........................................................................................................
+
+    // function makeFun() {
+    //     const name = "Aman"
+    //     function displayName() {
+    //         console.log(name);
+    //     }
+    //     return displayName
+    // }
+    // const myFunc = makeFun()
+    // myFunc()
+
+    //.........................................................................................................
+
+
+
+</script>
+
+<script>
+    // let bodyOrange = document.getElementById("orange")
+    // bodyOrange.addEventListener("click", function () {
+    //     document.body.style.backgroundColor = "orange"
+    // })
+
+    // let bodyGreen = document.getElementById("green")
+    // bodyGreen.addEventListener("click", function () {
+    //     document.body.style.backgroundColor = "green"
+    // })
+
+
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}`
+        return function () {
+            document.body.style.backgroundColor = `${color}`
+        }
+    }
+
+    let orangeBg = document.getElementById("orange")
+    orangeBg.addEventListener("click", clickHandler("orange"))
+
+    let greenBg = document.getElementById("green")
+    greenBg.addEventListener("click", clickHandler("green"))
+
+</script>
+
+</html>
